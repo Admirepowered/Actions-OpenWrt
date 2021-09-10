@@ -11,6 +11,10 @@
 name: Build OrangePi zero OpenWrt
 
 on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -18,8 +22,8 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  schedule:
-    - cron: 0 18 * * *
+  #schedule:
+  #  - cron: 0 18 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
